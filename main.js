@@ -6,7 +6,7 @@ function main() {
   var a = 5;
   var b = 3;
   var x = 2;
-  var y = 0;
+  var y = 10;
 
   var arr = [1, 3, 6, 2, 9, 7, 8, 4, 10, 5];
 
@@ -147,7 +147,21 @@ function search(x, arr) {
 // transform a base-10 number into a binary string
 // use y.toString(2) to verify your answer 
 function toBinary(y) {
-  return null;
+  var binaryString = '';
+
+  while (y >= 1) {
+    if (y % 2) {
+      binaryString = '1' + binaryString;
+      y = y - 1;
+      if (y === 0) break;
+    } else {
+      binaryString = '0' + binaryString;
+    }
+
+    y = y/2;
+  }
+
+  return binaryString;
 }
 
 // add two binary numbers
